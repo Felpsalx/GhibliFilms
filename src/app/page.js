@@ -18,6 +18,8 @@ function ListMovie() {
   const { data: filmes = [], isLoading, error } = useQuery({
     queryKey: ['filmes'],
     queryFn: fetchFilmes,
+    staleTime: 5 * 60 * 1000, // 5 minutos
+    cacheTime: 6 * 60 * 1000, // Tempo que os dados ficam em cache (6 minutos, por exemplo)
   })
 
 
